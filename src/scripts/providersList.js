@@ -6,11 +6,13 @@ import alchemykBanner from '../images/alchemy.png'
 import quicknodeBanner from '../images/quicknode.png'
 import infuraBanner from '../images/infura.png'
 
+const chainstackEndpoint = process.env.CHAINSTACK_AWS_VIRGINIA
+
 // List of providers  
 const providersList = [
   {
     name: 'chainstack',
-    endpoint: process.env.CHAINSTACK_AWS_VIRGINIA,
+    endpoint: chainstackEndpoint,
     image: chainstackBanner.src,
     title: 'Chainstack',
     link: 'https://chainstack.com/',
