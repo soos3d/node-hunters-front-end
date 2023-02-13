@@ -11,6 +11,7 @@ const Header = ({ lastUpdate }) => {
       <ul className="list-disc pl-5 mt-2">
         <li>Query the <code className="bg-gray-700 px-2 rounded">getBlockNumber</code> method using the <code className="bg-gray-700 px-2 rounded">Web3.js</code> library.</li>
         <li>Query an Ethereum mainnet node on a free plan.</li>
+        <li>Test performed from a server deployed in New York City.</li>
         <li>Send 11 requests in a row, remove the first one, and calculate the average of the ten remainings. This is done because the first request can often be non-representative, as some providers have an authorization process during the first request.</li>
       </ul>
       <div className="flex justify-between mt-10">
