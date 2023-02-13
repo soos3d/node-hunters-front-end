@@ -5,6 +5,7 @@ import chainstackBanner from '../images/chainstack.png'
 import alchemykBanner from '../images/alchemy.png'
 import quicknodeBanner from '../images/quicknode.png'
 import infuraBanner from '../images/infura.png'
+import ankrBanner from '../images/ankr.png'
 
 // List of providers  
 const providersList = [
@@ -38,6 +39,14 @@ const providersList = [
     image: infuraBanner.src,
     title: 'Infura',
     link: 'https://www.infura.io/',
+    description: 'Ethereum mainnet node | Free plan',
+  },
+  {
+    index: 4,
+    name: 'ankr',
+    image: ankrBanner.src,
+    title: 'Ankr',
+    link: 'https://www.ankr.com/',
     description: 'Ethereum mainnet node | Free plan',
   },
   
