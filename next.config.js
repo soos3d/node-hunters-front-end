@@ -9,10 +9,9 @@ module.exports = nextConfig
 
 const nextConfig = {
   reactStrictMode: true,
-  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
-  rules: {
-    'rule-name': 'off',
-  },
+  eslint: {
+    ignoreDuringBuilds: true,
+},
 };
 
 module.exports = nextConfig;
