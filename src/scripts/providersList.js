@@ -1,4 +1,3 @@
-//require('dotenv').config();
 
 // Import banners from the images folder
 import chainstackBanner from '../images/chainstack.png'
@@ -6,7 +5,7 @@ import alchemykBanner from '../images/alchemy.png'
 import quicknodeBanner from '../images/quicknode.png'
 import infuraBanner from '../images/infura.png'
 
-const chainstackEndpoint = process.env.CHAINSTACK_AWS_VIRGINIA
+const chainstackEndpoint = process.env.REACT_APP_CHAINSTACK_AWS_VIRGINIA
 
 // List of providers  
 const providersList = [
@@ -20,7 +19,7 @@ const providersList = [
   },
   {
     name: 'alchemy',
-    endpoint: process.env.ALCHEMY,
+    endpoint: process.env.REACT_APP_ALCHEMY,
     image: alchemykBanner.src,
     title: 'Alchemy',
     link: 'https://www.alchemy.com/',
@@ -28,7 +27,7 @@ const providersList = [
   },
   {
     name: 'quicknode',
-    endpoint: process.env.QUICKNODE,
+    endpoint: process.env.REACT_APP_QUICKNODE,
     image: quicknodeBanner.src,
     title: 'QuickNode',
     link: 'https://www.quicknode.com/',
@@ -36,7 +35,7 @@ const providersList = [
   },
   {
     name: 'infura',
-    endpoint: process.env.INFURA,
+    endpoint: process.env.REACT_APP_INFURA,
     image: infuraBanner.src,
     title: 'Infura',
     link: 'https://www.infura.io/',
