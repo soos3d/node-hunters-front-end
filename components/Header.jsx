@@ -1,14 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Header = ({ lastUpdate, nextUpdate }) => {
-  const [timer, setTimer] = useState(null);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setTimer(nextUpdate);
-    }
-  }, [nextUpdate]);
-
+const Header = ({ lastUpdate }) => {
   return (
     <div className="bg-gray-800 text-white shadow-md p-10">
       <p className="text-lg mt-5">
@@ -23,12 +15,9 @@ const Header = ({ lastUpdate, nextUpdate }) => {
       </ul>
       <div className="flex justify-between mt-10">
         <p className="text-sm font-bold">Last Update: {lastUpdate}</p>
-        <p className="text-sm font-bold">Next Update in: {timer}</p>
       </div>
     </div>
   );
-  
-  
 };
 
 export default Header;

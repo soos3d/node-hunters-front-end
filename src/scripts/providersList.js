@@ -1,3 +1,4 @@
+//require('dotenv').config();
 
 // Import banners from the images folder
 import chainstackBanner from '../images/chainstack.png'
@@ -5,37 +6,35 @@ import alchemykBanner from '../images/alchemy.png'
 import quicknodeBanner from '../images/quicknode.png'
 import infuraBanner from '../images/infura.png'
 
-const chainstackEndpoint = process.env.NEXT_PUBLIC_CHAINSTACK_AWS_VIRGINIA
-
 // List of providers  
 const providersList = [
   {
+    index: 0,
     name: 'chainstack',
-    endpoint: chainstackEndpoint,
     image: chainstackBanner.src,
     title: 'Chainstack',
     link: 'https://chainstack.com/',
     description: 'Ethereum mainnet node | Free plan',
   },
   {
+    index: 1,
     name: 'alchemy',
-    endpoint: process.env.NEXT_PUBLIC_ALCHEMY,
     image: alchemykBanner.src,
     title: 'Alchemy',
     link: 'https://www.alchemy.com/',
     description: 'Ethereum mainnet node | Free plan',
   },
   {
+    index: 2,
     name: 'quicknode',
-    endpoint: process.env.NEXT_PUBLIC_QUICKNODE,
     image: quicknodeBanner.src,
     title: 'QuickNode',
     link: 'https://www.quicknode.com/',
     description: 'Ethereum mainnet node | Free plan',
   },
   {
+    index: 3,
     name: 'infura',
-    endpoint: process.env.NEXT_PUBLIC_INFURA,
     image: infuraBanner.src,
     title: 'Infura',
     link: 'https://www.infura.io/',
