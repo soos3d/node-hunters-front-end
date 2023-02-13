@@ -10,7 +10,7 @@ import ProviderCard from '../../components/ProviderCard';
 import providersList from '../scripts/providersList';
 import testNodeLatency from '../scripts/getLatency';
 
-const UPDATE_TIME = 300000;
+const UPDATE_TIME = 30000;
 
 const sortProvidersByLatency = (providers, latencies) => {
   return providers.sort((provider1, provider2) => {
