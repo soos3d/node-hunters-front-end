@@ -7,14 +7,14 @@ const nextConfig = {
 module.exports = nextConfig
 */
 
-const Dotenv = require('dotenv-webpack');
-
 const nextConfig = {
-  reactStrictMode: true,
-  webpack: (config) => {
-    config.plugins.push(new Dotenv());
-    return config;
+  env: {
+    NEXT_CHAINSTACK_AWS_VIRGINIA : process.env.NEXT_CHAINSTACK_AWS_VIRGINIA,
+    NEXT_ALCHEMY : process.env.NEXT_ALCHEMY,
+    NEXT_QUICKNODE : process.env.NEXT_QUICKNODE,
+    NEXT_INFURA : process.env.NEXT_INFURA,
   },
+  reactStrictMode: true,
 };
 
 module.exports = nextConfig;

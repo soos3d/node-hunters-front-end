@@ -2,7 +2,7 @@ import React from "react";
 
 const ProviderCard = ({ image, title, link, description, status, latency }) => {
     return (
-        <div className="max-w-sm rounded overflow-hidden shadow-lg">
+        <div className="max-w-sm rounded overflow-hidden shadow-lg border-4 border-violet-700">
       <a target='blank' href={link}>
         <img className="w-full" src={image} alt={title} />
       </a>
