@@ -5,7 +5,7 @@ import alchemykBanner from '../images/alchemy.png'
 import quicknodeBanner from '../images/quicknode.png'
 import infuraBanner from '../images/infura.png'
 
-const chainstackEndpoint = process.env.NEXT_CHAINSTACK_AWS_VIRGINIA
+const chainstackEndpoint = process.env.NEXT_PUBLIC_CHAINSTACK_AWS_VIRGINIA
 
 // List of providers  
 const providersList = [
@@ -19,7 +19,7 @@ const providersList = [
   },
   {
     name: 'alchemy',
-    endpoint: process.env.NEXT_ALCHEMY,
+    endpoint: process.env.NEXT_PUBLIC_ALCHEMY,
     image: alchemykBanner.src,
     title: 'Alchemy',
     link: 'https://www.alchemy.com/',
@@ -27,7 +27,7 @@ const providersList = [
   },
   {
     name: 'quicknode',
-    endpoint: process.env.NEXT_QUICKNODE,
+    endpoint: process.env.NEXT_PUBLIC_QUICKNODE,
     image: quicknodeBanner.src,
     title: 'QuickNode',
     link: 'https://www.quicknode.com/',
@@ -35,7 +35,7 @@ const providersList = [
   },
   {
     name: 'infura',
-    endpoint: process.env.NEXT_INFURA,
+    endpoint: process.env.NEXT_PUBLIC_INFURA,
     image: infuraBanner.src,
     title: 'Infura',
     link: 'https://www.infura.io/',
