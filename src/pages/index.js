@@ -21,25 +21,21 @@ const sortProvidersByLatency = (providers, latencies) => {
 
 const App = () => {
   const [latencies, setLatencies] = useState([]);
-  const [startTime, setStartTime] = useState(Date.now());
   const [lastUpdate, setLastUpdate] = useState(null);
 
-  useEffect(() => {
-    setLastUpdate(new Date(startTime).toLocaleString());
-  }, [startTime]);
+  const fetchLatencies = async () => {
+    const response = await fetch(`https://nodes-hunter-server-inyie.ondigitalocean.app/results`);
+    const result = await response.json();
+    setLatencies(result.results);
+    const date = new Date(result.lastRun);
+    const readableDate = date.toLocaleString();
+    setLastUpdate(readableDate);
+  };
 
   useEffect(() => {
-    const fetchLatencies = async () => {
-      setStartTime(Date.now());
-  
-      const response = await fetch(`https://nodes-hunter-server-inyie.ondigitalocean.app/results`);
-      const result = await response.json();
-      setLatencies(result.results);
-    };
-  
     fetchLatencies(); // run immediately when the component loads
     const intervalId = setInterval(fetchLatencies, UPDATE_TIME); // update every 5 minutes (300000 milliseconds)
-  
+
     return () => clearInterval(intervalId);
   }, []);
   
@@ -56,7 +52,7 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <Header lastUpdate={lastUpdate} className />
+      <Header lastUpdate={lastUpdate} />
       <div className='flex mt-10 justify-center items-center'>
         <div className='grid grid-cols-4 gap-10 ml-5 mr-5'>
           {sortedProviders.map(provider => (
