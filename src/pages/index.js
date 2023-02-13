@@ -10,7 +10,7 @@ import ProviderCard from '../../components/ProviderCard';
 import providersList from '../scripts/providersList';
 import testNodeLatency from '../scripts/getLatency';
 
-const UPDATE_TIME = 30000;
+const UPDATE_TIME = 300000; // 5 minutes in ms
 
 const sortProvidersByLatency = (providers, latencies) => {
   return providers.sort((provider1, provider2) => {
@@ -67,7 +67,7 @@ const App = () => {
         const latencies = results.reduce((acc, result) => ({ ...acc, ...result }), {});
         setLatencies(latencies);
       });
-    }, UPDATE_TIME); // update every 5 minutes (300000 milliseconds)
+    }, UPDATE_TIME); // update every 5 minutes
 
     return () => clearInterval(intervalId);
   }, []);
