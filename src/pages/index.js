@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 // Import components
 import Header from '../../components/Header';
 import Navbar from '../../components/Navbar';
 import ProviderCard from '../../components/ProviderCard';
-
 
 // Import scripts
 import providersList from '../scripts/providersList';
@@ -23,22 +23,25 @@ const App = () => {
   const [latencies, setLatencies] = useState([]);
   const [lastUpdate, setLastUpdate] = useState(null);
 
-  const fetchLatencies = async () => {
-    const response = await fetch(`https://nodes-hunter-server-inyie.ondigitalocean.app/results`);
-    const result = await response.json();
-    setLatencies(result.results);
-    const date = new Date(result.lastRun);
-    const readableDate = date.toLocaleString();
-    setLastUpdate(readableDate);
-  };
-
   useEffect(() => {
-    fetchLatencies(); // run immediately when the component loads
-    const intervalId = setInterval(fetchLatencies, UPDATE_TIME); // update every 5 minutes (300000 milliseconds)
+    const fetchLatencies = async () => {
+      try {
+        const response = await fetch(`https://nodes-hunter-server-inyie.ondigitalocean.app/results`);
+        const result = await response.json();
+        setLatencies(result.results);
+        const date = new Date(result.lastRun);
+        const readableDate = date.toLocaleString();
+        setLastUpdate(readableDate);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchLatencies();
+    const intervalId = setInterval(fetchLatencies, UPDATE_TIME);
 
     return () => clearInterval(intervalId);
   }, []);
-  
 
   const updatedProviders = providersList.map(provider => {
     const updatedProvider = { ...provider };
