@@ -9,7 +9,12 @@ const Navbar = () => (
         <div className="navbar__links flex items-center">
           <button className="navbar__github-button bg-black hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full mr-5">
             <a target="_blank" href="https://github.com/soos3d/node-hunters-next">
-              <i className="fab fa-github fa-2x"></i> Github
+              <i className="fab fa-github fa-2x"></i> Frontend
+            </a>
+          </button>
+          <button className="navbar__github-button bg-black hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full mr-5">
+            <a target="_blank" href="https://github.com/soos3d/nodes-hunter-server">
+              <i className="fab fa-github fa-2x"></i> Backend
             </a>
           </button>
           <button className="navbar__twitter-button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-10">
