@@ -7,6 +7,7 @@ import quicknodeBanner from '../images/quicknode.png'
 import infuraBanner from '../images/infura.png'
 import ankrBanner from '../images/ankr.png'
 import cloudflareBanner from '../images/cloudflare.png'
+import flashbotsBanner from '../images/flashbots.png'
 
 // List of providers  
 const providersList = [
@@ -56,6 +57,14 @@ const providersList = [
     image: cloudflareBanner.src,
     title: 'Cloudflare',
     link: 'https://www.cloudflare.com/web3/',
+    description: 'Ethereum mainnet | Public RPC',
+  },
+  {
+    index: 6,
+    name: 'flashbots',
+    image: flashbotsBanner.src,
+    title: 'Flashbots',
+    link: 'https://www.flashbots.net/',
     description: 'Ethereum mainnet | Public RPC',
   },
   
