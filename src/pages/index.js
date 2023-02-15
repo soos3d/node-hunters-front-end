@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 
 // Import components
 import Header from '../../components/Header';
@@ -22,6 +21,11 @@ const sortProvidersByLatency = (providers, latencies) => {
 const App = () => {
   const [latencies, setLatencies] = useState([]);
   const [lastUpdate, setLastUpdate] = useState(null);
+
+  useEffect(() => {
+    // Change the title
+    document.title = 'Nodes Hunter';
+  }, []);  
 
   useEffect(() => {
     const fetchLatencies = async () => {
@@ -57,7 +61,7 @@ const App = () => {
       <Navbar />
       <Header lastUpdate={lastUpdate} />
       <div className='flex mt-10 justify-center items-center'>
-        <div className='grid grid-cols-4 gap-10 ml-5 mr-5'>
+        <div className='grid grid-cols-5 gap-10 ml-5 mr-5'>
           {sortedProviders.map(provider => (
             <div className='ml-5 mb-10' style={{ display: 'inline-block', margin: 'auto' }} key={provider.name}>
               <ProviderCard
