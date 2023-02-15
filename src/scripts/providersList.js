@@ -9,6 +9,7 @@ import ankrBanner from '../images/ankr.png'
 import cloudflareBanner from '../images/cloudflare.png'
 import flashbotsBanner from '../images/flashbots.png'
 import llamanodesBanner from '../images/llamanodes.png'
+import poktBanner from '../images/pokt.png'
 
 // List of providers  
 const providersList = [
@@ -75,6 +76,14 @@ const providersList = [
     title: 'LlamaNodes',
     link: 'https://llamanodes.com/',
     description: 'Ethereum mainnet | Public',
+  },
+  {
+    index: 8,
+    name: 'pokt',
+    image: poktBanner.src,
+    title: 'Pocket Network',
+    link: 'https://www.pokt.network/',
+    description: 'Ethereum mainnet | Free plan',
   },
   
 ];

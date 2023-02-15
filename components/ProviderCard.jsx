@@ -23,7 +23,7 @@ const ProviderCard = ({ image, title, link, description, status, latency }) => {
             status === "connected" ? "bg-green-500" : "bg-red-500"
           }`}
         >
-          {status === "connected" ? "Connected" : "Unresponsive"}
+          {status === "connected" ? "Responsive" : "Unresponsive"}
         </div>
       </div>
       <div className="px-6 py-4 bg-gray-200">
