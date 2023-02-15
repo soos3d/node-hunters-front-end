@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 // Import components
 import Header from '../../components/Header';
-import Navbar from '../../components/Navbar';
 import ProviderCard from '../../components/ProviderCard';
 
 // Import scripts
@@ -58,7 +57,6 @@ const App = () => {
 
   return (
     <div>
-      <Navbar />
       <Header lastUpdate={lastUpdate} />
       <div className='flex mt-10 justify-center items-center'>
         <div className='grid grid-cols-5 gap-10 ml-5 mr-5'>
