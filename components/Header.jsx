@@ -2,8 +2,8 @@ import React from "react";
 
 const Header = ({ lastUpdate }) => {
   return (
-    <header className="header bg-gray-800 text-white shadow-md p-10">
-      <p className="header__description text-lg mt-5">
+    <header className="header bg-gray-800 text-white shadow-md p-5">
+      <p className="header__description text-lg">
         This page displays the latency of different providers and updates the information every 5 minutes.
       </p>
       <p className="header__parameters text-2xl mt-5 text-orange-500">The latency test is conducted based on the following parameters: </p>

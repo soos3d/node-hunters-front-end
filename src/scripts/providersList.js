@@ -6,6 +6,7 @@ import alchemykBanner from '../images/alchemy.png'
 import quicknodeBanner from '../images/quicknode.png'
 import infuraBanner from '../images/infura.png'
 import ankrBanner from '../images/ankr.png'
+import cloudflareBanner from '../images/cloudflare.png'
 
 // List of providers  
 const providersList = [
@@ -15,7 +16,7 @@ const providersList = [
     image: chainstackBanner.src,
     title: 'Chainstack',
     link: 'https://chainstack.com/',
-    description: 'Ethereum mainnet node | Free plan',
+    description: 'Ethereum mainnet | Free plan',
   },
   {
     index: 1,
@@ -23,7 +24,7 @@ const providersList = [
     image: alchemykBanner.src,
     title: 'Alchemy',
     link: 'https://www.alchemy.com/',
-    description: 'Ethereum mainnet node | Free plan',
+    description: 'Ethereum mainnet | Free plan',
   },
   {
     index: 2,
@@ -31,7 +32,7 @@ const providersList = [
     image: quicknodeBanner.src,
     title: 'QuickNode',
     link: 'https://www.quicknode.com/',
-    description: 'Ethereum mainnet node | Free plan',
+    description: 'Ethereum mainnet | Free plan',
   },
   {
     index: 3,
@@ -39,7 +40,7 @@ const providersList = [
     image: infuraBanner.src,
     title: 'Infura',
     link: 'https://www.infura.io/',
-    description: 'Ethereum mainnet node | Free plan',
+    description: 'Ethereum mainnet | Free plan',
   },
   {
     index: 4,
@@ -47,7 +48,15 @@ const providersList = [
     image: ankrBanner.src,
     title: 'Ankr',
     link: 'https://www.ankr.com/',
-    description: 'Ethereum mainnet node | Free plan',
+    description: 'Ethereum mainnet | Free plan',
+  },
+  {
+    index: 5,
+    name: 'cloudflare',
+    image: cloudflareBanner.src,
+    title: 'Cloudflare',
+    link: 'https://www.cloudflare.com/web3/',
+    description: 'Ethereum mainnet | Public RPC',
   },
   
 ];
