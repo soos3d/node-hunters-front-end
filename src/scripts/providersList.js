@@ -10,6 +10,7 @@ import cloudflareBanner from '../images/cloudflare.png'
 import flashbotsBanner from '../images/flashbots.png'
 import llamanodesBanner from '../images/llamanodes.png'
 import poktBanner from '../images/pokt.png'
+import blastBanner from '../images/blast.png'
 
 // List of providers  
 const providersList = [
@@ -83,6 +84,14 @@ const providersList = [
     image: poktBanner.src,
     title: 'Pocket Network',
     link: 'https://www.pokt.network/',
+    description: 'Ethereum mainnet | Free plan',
+  },
+  {
+    index: 9,
+    name: 'blast',
+    image: blastBanner.src,
+    title: 'Blast API',
+    link: 'https://blastapi.io/',
     description: 'Ethereum mainnet | Free plan',
   },
   
