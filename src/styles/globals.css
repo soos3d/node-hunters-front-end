@@ -90,13 +90,14 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  background-color: rgb(250, 250, 249);
+  /* color: rgb(var(--foreground-rgb)); */
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
 }
 
 a {
@@ -122,4 +123,17 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  background: #bbd6fb;
+}
+
+::selection {
+  background: #bbd6fb;
+}
+
+.provider-card:last-of-type {
+  margin-bottom: 40px;
 }

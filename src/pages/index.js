@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 // Import components
 import Header from '../../components/Header';
 import ProviderCard from '../../components/ProviderCard';
+import Info from '../../components/Info';
 
 // Import scripts
 import providersList from '../scripts/providersList';
@@ -24,12 +25,14 @@ const App = () => {
   useEffect(() => {
     // Change the title
     document.title = 'Nodes Hunter';
-  }, []);  
+  }, []);
 
   useEffect(() => {
     const fetchLatencies = async () => {
       try {
-        const response = await fetch(`https://nodes-hunter-server-inyie.ondigitalocean.app/results`);
+        const response = await fetch(
+          `https://nodes-hunter-server-inyie.ondigitalocean.app/results`
+        );
         const result = await response.json();
         setLatencies(result.results);
         const date = new Date(result.lastRun);
@@ -46,7 +49,7 @@ const App = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  const updatedProviders = providersList.map(provider => {
+  const updatedProviders = providersList.map((provider) => {
     const updatedProvider = { ...provider };
     updatedProvider.status = latencies[provider.index] ? 'connected' : 'down';
     updatedProvider.latency = latencies[provider.index] || 0;
@@ -56,28 +59,48 @@ const App = () => {
   const sortedProviders = sortProvidersByLatency(updatedProviders, latencies);
 
   return (
-    <div>
+    <div
+      style={{ backgroundColor: 'rgb(250,250,249)' }}
+      className="container mx-auto"
+    >
       <Header lastUpdate={lastUpdate} />
-      <div className='flex mt-10 justify-center items-center'>
-        <div className='grid grid-cols-5 gap-10 ml-5 mr-5'>
-          {sortedProviders.map(provider => (
-            <div className='ml-5 mb-10' style={{ display: 'inline-block', margin: 'auto' }} key={provider.name}>
+      <div
+        className="text-4xl font-bold my-10 text-black"
+        // style={{ maxWidth: '1000px', margin: 'auto' }}
+      >
+        Explore Ethereum nodes providers
+      </div>
+      <div
+        className="grid grid-cols-10 gap-8"
+        // style={{ maxWidth: '1000px', margin: 'auto' }}
+      >
+        {/* <div className="col-span-1"></div> */}
+        {/* ⬇ for Info  component col-span-4, class is inside */}
+        <div
+          className="col-span-6 overflow-y-scroll"
+          style={{ height: 'calc(100vh - 192px)' }}
+        >
+          <div className="flex flex-col">
+            {sortedProviders.map((provider, index) => (
               <ProviderCard
-                key={provider.name}
+                key={index}
                 image={provider.image}
                 title={provider.title}
                 link={provider.link}
                 description={provider.description}
                 status={provider.status}
                 latency={provider.latency}
-                style={{ height: '120px', width: '120px' }}
+                style={{}}
               />
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+        <Info />
+
+        {/* <div className="col-span-1"></div> */}
       </div>
     </div>
   );
-};  
+};
 
 export default App;
