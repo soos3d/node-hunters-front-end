@@ -63,7 +63,7 @@ const App = () => {
       style={{ backgroundColor: 'rgb(250,250,249)' }}
       className="container mx-auto"
     >
-      <Header lastUpdate={lastUpdate} />
+      <Header />
       <div
         className="text-4xl font-bold my-10 text-black"
         // style={{ maxWidth: '1000px', margin: 'auto' }}
@@ -95,7 +95,7 @@ const App = () => {
             ))}
           </div>
         </div>
-        <Info />
+        <Info lastUpdate={lastUpdate} />
 
         {/* <div className="col-span-1"></div> */}
       </div>
