@@ -1,8 +1,9 @@
 import React from "react";
+import "@fortawesome/fontawesome-free/css/all.css";
 
-const ProviderCard = ({ image, title, link, description, status, latency }) => {
+const ProviderCard = ({ image, title, link, description, status, latency, tooltipText }) => {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg border-4 border-blue-700">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg border-4 border-blue-700 bg-white">
       <a target="_blank" rel="noopener noreferrer" href={link}>
         <img className="w-full shadow-lg" src={image} alt={title} />
       </a>
@@ -25,6 +26,9 @@ const ProviderCard = ({ image, title, link, description, status, latency }) => {
         >
           {status === "connected" ? "Responsive" : "Unresponsive"}
         </div>
+          <span className="tooltip ml-5 mt-1" data-tooltip={tooltipText.join("\n")}>
+            <i className="fa fa-info-circle"></i>
+          </span>
       </div>
       <div className="px-6 py-4 bg-gray-200">
         <p className="text-gray-700 text-center">Latency: {latency} ms</p>

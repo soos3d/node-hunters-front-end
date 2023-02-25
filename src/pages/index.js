@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 // Import components
 import Header from '../../components/Header';
 import ProviderCard from '../../components/ProviderCard';
+import Footer from '../../components/Footer';
 
 // Import scripts
 import providersList from '../scripts/providersList';
@@ -11,11 +12,12 @@ const UPDATE_TIME = 420000;
 
 const sortProvidersByLatency = (providers, latencies) => {
   return providers.sort((provider1, provider2) => {
-    const latency1 = latencies[provider1.index] || 0;
-    const latency2 = latencies[provider2.index] || 0;
+    const latency1 = provider1.status === 'down' ? Number.MAX_VALUE : (latencies[provider1.index] || 0);
+    const latency2 = provider2.status === 'down' ? Number.MAX_VALUE : (latencies[provider2.index] || 0);
     return latency1 - latency2;
   });
 };
+
 
 const App = () => {
   const [latencies, setLatencies] = useState([]);
@@ -53,7 +55,7 @@ const App = () => {
     return updatedProvider;
   });
 
-  const sortedProviders = sortProvidersByLatency(updatedProviders, latencies);
+  const sortedProviders = sortProvidersByLatency(updatedProviders, latencies);  
 
   return (
     <div>
@@ -68,6 +70,7 @@ const App = () => {
                 title={provider.title}
                 link={provider.link}
                 description={provider.description}
+                tooltipText={[`Location: ${"metaverse"}\n`, `Archive: ${"No"}\n`, `Debug & Trace: ${"Yes"}\n`]}
                 status={provider.status}
                 latency={provider.latency}
                 style={{ height: '120px', width: '120px' }}
@@ -76,6 +79,7 @@ const App = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };  
