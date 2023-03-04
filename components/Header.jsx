@@ -47,13 +47,13 @@ const Header = ({ lastUpdate }) => {
           </div>
         </div>
       </div>
-      <div class="logo relative pt-10 mb-20">
-        <p class="text-3xl absolute w-full text-center">
+      <div className="logo relative pt-10 mb-20">
+        <p className="text-3xl absolute w-full text-center">
           Explore Ethereum nodes providers
         </p>
       </div>
       <div className="flex items-center justify-center">
-        <div className="bg-white rounded-md shadow-md p-4 text-black w-1/2">
+        <div className="bg-white rounded-md shadow-md p-4 text-black w-1/2 border border-violet-700 border-2">
           <div className="text-xl font-medium mb-2">
             Latency Test Parameters
           </div>
@@ -70,9 +70,12 @@ const Header = ({ lastUpdate }) => {
               Send 11 requests in a row, remove the first one, and calculate the
               average of the ten remaining requests.
             </li>
-            <li>The results are updated every 5 minutes.</li>
-            <p class="mx-auto font-bold mt-5 font-lg">
-              The first request is eliminated as it is often non-representative.
+            <li>The results are updated every 15 minutes.</li>
+            <p className="mx-auto font-bold mt-5 font-lg">
+              NOTE: The first request is eliminated as it is often non-representative.
+            </p>
+            <p className="mx-auto font-bold font-lg">
+              NOTE: The locations displayed are approximations.
             </p>
           </ul>
         </div>

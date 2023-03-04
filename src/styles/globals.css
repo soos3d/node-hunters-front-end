@@ -10,20 +10,20 @@
 .tooltip::before {
   content: attr(data-tooltip);
   position: absolute;
-  bottom: 100%;
-  left: 50%;
+  bottom: 150%;
+  left: 100%;
   transform: translateX(-75%);
-  padding: 1.5rem;
+  padding: 1rem;
   white-space: pre-wrap;
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.9);
   border-radius: 0.5rem;
   opacity: 0;
   transition: opacity 0.2s ease-out;
   z-index: 9999;
-  width: 12rem;
+  width: 14rem;
 }
 
 .tooltip:hover::before {

@@ -8,7 +8,7 @@ import Footer from '../../components/Footer';
 // Import scripts
 import providersList from '../scripts/providersList';
 
-const UPDATE_TIME = 420000;
+const UPDATE_TIME_IN_MS = 1020000; // 17 minutes in milliseconds
 
 const sortProvidersByLatency = (providers, latencies) => {
   return providers.sort((provider1, provider2) => {
@@ -18,22 +18,26 @@ const sortProvidersByLatency = (providers, latencies) => {
   });
 };
 
-
 const App = () => {
   const [latencies, setLatencies] = useState([]);
+  const [settings, setSettings] = useState([]);
+  const [location, setLocation] = useState([]);
   const [lastUpdate, setLastUpdate] = useState(null);
 
   useEffect(() => {
-    // Change the title
+    // Set the page title
     document.title = 'Nodes Hunter';
   }, []);  
 
   useEffect(() => {
+    // Fetch the latencies from the server
     const fetchLatencies = async () => {
       try {
         const response = await fetch(`https://nodes-hunter-server-inyie.ondigitalocean.app/results`);
         const result = await response.json();
         setLatencies(result.results);
+
+        // Set the last update time
         const date = new Date(result.lastRun);
         const readableDate = date.toLocaleString();
         setLastUpdate(readableDate);
@@ -42,16 +46,57 @@ const App = () => {
       }
     };
 
-    fetchLatencies();
-    const intervalId = setInterval(fetchLatencies, UPDATE_TIME);
+    // Fetch the settings from the server
+    const fetchSettings = async () => {
+      try {
+        const response = await fetch(`https://nodes-hunter-server-inyie.ondigitalocean.app/settings`);
+        const result = await response.json();
+        setSettings(result.settingsResults);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
+    // Fetch the location from the server
+    const fetchLocation = async () => {
+      try {
+        const response = await fetch(`https://nodes-hunter-server-inyie.ondigitalocean.app/location`);
+        const result = await response.json();
+        setLocation(result.location);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    // Fetch the data initially and then at regular intervals
+    fetchLatencies();
+    fetchSettings();
+    fetchLocation();
+    const intervalId = setInterval(() => {
+      fetchLatencies();
+      fetchSettings();
+      fetchLocation();
+    }, UPDATE_TIME_IN_MS);
+
+    // Clear the interval on unmounting
     return () => clearInterval(intervalId);
   }, []);
 
+  // Update the providers with the latest data
   const updatedProviders = providersList.map(provider => {
     const updatedProvider = { ...provider };
     updatedProvider.status = latencies[provider.index] ? 'connected' : 'down';
     updatedProvider.latency = latencies[provider.index] || 0;
+
+    const region = location[provider.index]?.[0];
+    const country = location[provider.index]?.[1];
+
+    updatedProvider.tooltipText = [
+      `Location: ${region}, ${country}\n`, 
+      `Archive: ${settings[provider.index]?.[0] ? 'Yes' : 'No'}\n`, // add a check for the first item in the settings array
+      `Debug & Trace: ${settings[provider.index]?.[1] ? 'Yes' : 'No'}\n`, // add a check for the second item in the settings array
+      `Client version: ${settings[provider.index]?.[2] ?? "N/A"}`, // add a check for the third item in the settings array
+    ];
     return updatedProvider;
   });
 
@@ -70,7 +115,7 @@ const App = () => {
                 title={provider.title}
                 link={provider.link}
                 description={provider.description}
-                tooltipText={[`Location: ${"metaverse"}\n`, `Archive: ${"No"}\n`, `Debug & Trace: ${"Yes"}\n`]}
+                tooltipText={provider.tooltipText}
                 status={provider.status}
                 latency={provider.latency}
                 style={{ height: '120px', width: '120px' }}
