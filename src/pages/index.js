@@ -26,7 +26,7 @@ const App = () => {
 
   useEffect(() => {
     // Set the page title
-    document.title = 'Nodes Hunter';
+    document.title = 'Node Hunters';
   }, []);  
 
   useEffect(() => {

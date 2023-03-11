@@ -18,32 +18,9 @@ const Header = ({ lastUpdate }) => {
             />
             <div className="container">
               <p className="font-cursive text-2xl font-bold uppercase tracking-wider">
-                Nodes Hunter
+                Node Hunters
               </p>
             </div>
-          </div>
-          <div className="links flex items-center space-x-5">
-            <a
-              target="_blank"
-              href="https://github.com/soos3d/node-hunters-next"
-              className="github-button bg-black hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full"
-            >
-              <i className="fab fa-github"></i> Frontend
-            </a>
-            <a
-              target="_blank"
-              href="https://github.com/soos3d/nodes-hunter-server"
-              className="github-button bg-black hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full"
-            >
-              <i className="fab fa-github"></i> Backend
-            </a>
-            <a
-              target="_blank"
-              href="https://twitter.com/web3Dav3"
-              className="twitter-button bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-full"
-            >
-              <i className="fab fa-twitter"></i> Twitter
-            </a>
           </div>
         </div>
       </div>
