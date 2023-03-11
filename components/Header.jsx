@@ -47,7 +47,7 @@ const Header = ({ lastUpdate }) => {
               Send 11 requests in a row, remove the first one, and calculate the
               average of the ten remaining requests.
             </li>
-            <li>The results are updated every 15 minutes.</li>
+            <li>The test runs every 15 minutes.</li>
             <p className="mx-auto font-bold mt-5 font-lg">
               NOTE: The first request is eliminated as it is often non-representative.
             </p>
