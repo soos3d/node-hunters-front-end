@@ -12,6 +12,7 @@ import llamanodesBanner from '../images/llamanodes.png'
 import poktBanner from '../images/pokt.png'
 import blastBanner from '../images/blast.png'
 import nodereal from '../images/nodereal.png'
+import gateway from '../images/gateway.png'
 
 // List of providers  
 const providersList = [
@@ -102,6 +103,14 @@ const providersList = [
     title: 'NodeReal',
     link: 'https://nodereal.io/',
     description: 'Ethereum mainnet | Free plan',
+  },
+  {
+    index: 11,
+    name: 'gateway',
+    image: gateway.src,
+    title: 'Gateway.fm',
+    link: 'https://www.gateway.fm/',
+    description: 'Ethereum mainnet | Public',
   },
   
 ];
