@@ -33,7 +33,7 @@ const App = () => {
     // Fetch the latencies from the server
     const fetchLatencies = async () => {
       try {
-        const response = await fetch(`https://nodes-hunter-server-inyie.ondigitalocean.app/results`);
+        const response = await fetch(`https://api.nodehunters.xyz/results`);
         const result = await response.json();
         setLatencies(result.results);
 
@@ -49,7 +49,7 @@ const App = () => {
     // Fetch the settings from the server
     const fetchSettings = async () => {
       try {
-        const response = await fetch(`https://nodes-hunter-server-inyie.ondigitalocean.app/settings`);
+        const response = await fetch(`https://api.nodehunters.xyz/settings`);
         const result = await response.json();
         setSettings(result.settingsResults);
       } catch (error) {
@@ -60,7 +60,7 @@ const App = () => {
     // Fetch the location from the server
     const fetchLocation = async () => {
       try {
-        const response = await fetch(`https://nodes-hunter-server-inyie.ondigitalocean.app/location`);
+        const response = await fetch(`https://api.nodehunters.xyz/location`);
         const result = await response.json();
         setLocation(result.location);
       } catch (error) {
