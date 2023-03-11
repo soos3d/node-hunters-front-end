@@ -11,6 +11,7 @@ import flashbotsBanner from '../images/flashbots.png'
 import llamanodesBanner from '../images/llamanodes.png'
 import poktBanner from '../images/pokt.png'
 import blastBanner from '../images/blast.png'
+import nodereal from '../images/nodereal.png'
 
 // List of providers  
 const providersList = [
@@ -92,6 +93,14 @@ const providersList = [
     image: blastBanner.src,
     title: 'Blast API',
     link: 'https://blastapi.io/',
+    description: 'Ethereum mainnet | Free plan',
+  },
+  {
+    index: 10,
+    name: 'nodereal',
+    image: nodereal.src,
+    title: 'NodeReal',
+    link: 'https://nodereal.io/',
     description: 'Ethereum mainnet | Free plan',
   },
   

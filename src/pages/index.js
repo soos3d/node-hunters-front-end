@@ -92,7 +92,8 @@ const App = () => {
     const country = location[provider.index]?.[1];
 
     updatedProvider.tooltipText = [
-      `Location: ${region}, ${country}\n`, 
+      `Location: ${region}, ${country}\n`,
+      `Provider: ${location[provider.index]?.[2] ?? "N/A"}\n`, 
       `Archive: ${settings[provider.index]?.[0] ? 'Yes' : 'No'}\n`, // add a check for the first item in the settings array
       `Debug & Trace: ${settings[provider.index]?.[1] ? 'Yes' : 'No'}\n`, // add a check for the second item in the settings array
       `Client version: ${settings[provider.index]?.[2] ?? "N/A"}`, // add a check for the third item in the settings array
