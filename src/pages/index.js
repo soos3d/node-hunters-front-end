@@ -1,19 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 // Import components
-import Header from '../../components/Header';
-import ProviderCard from '../../components/ProviderCard';
-import Footer from '../../components/Footer';
+import Header from "../../components/Header";
+import ProviderCard from "../../components/ProviderCard";
+import Footer from "../../components/Footer";
 
 // Import scripts
-import providersList from '../scripts/providersList';
+import providersList from "../scripts/providersList";
 
 const UPDATE_TIME_IN_MS = 1020000; // 17 minutes in milliseconds
 
 const sortProvidersByLatency = (providers, latencies) => {
   return providers.sort((provider1, provider2) => {
-    const latency1 = provider1.status === 'down' ? Number.MAX_VALUE : (latencies[provider1.index] || 0);
-    const latency2 = provider2.status === 'down' ? Number.MAX_VALUE : (latencies[provider2.index] || 0);
+    const latency1 =
+      provider1.status === "down"
+        ? Number.MAX_VALUE
+        : latencies[provider1.index] || 0;
+    const latency2 =
+      provider2.status === "down"
+        ? Number.MAX_VALUE
+        : latencies[provider2.index] || 0;
     return latency1 - latency2;
   });
 };
@@ -26,8 +32,8 @@ const App = () => {
 
   useEffect(() => {
     // Set the page title
-    document.title = 'Node Hunters';
-  }, []);  
+    document.title = "Node Hunters";
+  }, []);
 
   useEffect(() => {
     // Fetch the latencies from the server
@@ -83,9 +89,9 @@ const App = () => {
   }, []);
 
   // Update the providers with the latest data
-  const updatedProviders = providersList.map(provider => {
+  const updatedProviders = providersList.map((provider) => {
     const updatedProvider = { ...provider };
-    updatedProvider.status = latencies[provider.index] ? 'connected' : 'down';
+    updatedProvider.status = latencies[provider.index] ? "connected" : "down";
     updatedProvider.latency = latencies[provider.index] || 0;
 
     const region = location[provider.index]?.[0];
@@ -93,23 +99,23 @@ const App = () => {
 
     updatedProvider.tooltipText = [
       `Location: ${region}, ${country}\n`,
-      `Provider: ${location[provider.index]?.[2] ?? "N/A"}\n`, 
-      `Archive: ${settings[provider.index]?.[0] ? 'Yes' : 'No'}\n`, // add a check for the first item in the settings array
-      `Debug & Trace: ${settings[provider.index]?.[1] ? 'Yes' : 'No'}\n`, // add a check for the second item in the settings array
+      `Provider: ${location[provider.index]?.[2] ?? "N/A"}\n`,
+      `Archive: ${settings[provider.index]?.[0] ? "Yes" : "No"}\n`, // add a check for the first item in the settings array
+      `Debug & Trace: ${settings[provider.index]?.[1] ? "Yes" : "No"}\n`, // add a check for the second item in the settings array
       `Client version: ${settings[provider.index]?.[2] ?? "N/A"}`, // add a check for the third item in the settings array
     ];
     return updatedProvider;
   });
 
-  const sortedProviders = sortProvidersByLatency(updatedProviders, latencies);  
+  const sortedProviders = sortProvidersByLatency(updatedProviders, latencies);
 
   return (
     <div>
-      <Header lastUpdate={lastUpdate} />
-      <div className='flex mt-10 justify-center items-center'>
-        <div className='grid grid-cols-5 gap-10 ml-5 mr-5'>
-          {sortedProviders.map(provider => (
-            <div className='ml-5 mb-10' style={{ display: 'inline-block', margin: 'auto' }} key={provider.name}>
+      <Header lastUpdate={lastUpdate} className="text-center" />
+      <div className="flex flex-col mt-10 justify-center items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 sm:px-4 md:px-8 lg:px-16 xl:px:64 ml-5 mr-5">
+          {sortedProviders.map((provider) => (
+            <div className="mb-10" key={provider.name}>
               <ProviderCard
                 key={provider.name}
                 image={provider.image}
@@ -119,7 +125,7 @@ const App = () => {
                 tooltipText={provider.tooltipText}
                 status={provider.status}
                 latency={provider.latency}
-                style={{ height: '120px', width: '120px' }}
+                style={{ height: "120px", width: "120px" }}
               />
             </div>
           ))}
@@ -128,6 +134,6 @@ const App = () => {
       <Footer />
     </div>
   );
-};  
+};
 
 export default App;

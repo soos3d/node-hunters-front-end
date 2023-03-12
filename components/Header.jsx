@@ -1,5 +1,6 @@
 import React from "react";
 import "@fortawesome/fontawesome-free/css/all.css";
+import providersList from "../src/scripts/providersList";
 
 import logo from "../src/images/logo.png";
 
@@ -7,61 +8,98 @@ import logo from "../src/images/logo.png";
 
 const Header = ({ lastUpdate }) => {
   return (
-    <header className="header text-white shadow-md p-5"> 
-      <div className="container mx-auto">
-        <div className="navbar flex items-center justify-between">
-          <div className="logo flex items-center">
+    <header className="header text-white">
+      <div class="container mx-auto bg-gray-900 w-full">
+        <div class="navbar flex flex-col items-center md:flex-row justify-between">
+          <div class="logo flex items-center">
             <img
               src={logo.src}
               alt="Nodes hunter logo"
-              className="ml-5 h-auto"
+              class="ml-2 md:ml-5 h-10 md:h-auto"
             />
-            <div className="container">
-              <p className="font-cursive text-2xl font-bold uppercase tracking-wider">
+            <div class="container">
+              <p class="font-cursive text-xl md:text-3xl font-bold uppercase tracking-wider text-yellow-300 text-glow ml-2 md:ml-5">
                 Node Hunters
               </p>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="logo relative pt-10 mb-20">
-        <p className="text-3xl absolute w-full text-center">
-          Explore Ethereum nodes providers
-        </p>
-      </div>
-      <div className="flex items-center justify-center">
-        <div className="bg-white rounded-md shadow-md p-4 text-black w-1/2 border border-violet-700 border-2">
-          <div className="text-xl font-medium mb-2">
-            Latency Test Parameters
+          <div class="sm:px-6 lg:px-8 mb-5 text-center mt-5 md:mt-0">
+            <a
+              target="_blank"
+              href="https://github.com/soos3d/nodes-hunter-server"
+              class="github-button bg-gray-800 hover:bg-gray-900 border border-zinc-50 text-white font-bold py-2 px-3 md:px-4 rounded-full mr-2 md:mr-5"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              target="_blank"
+              href="https://twitter.com/web3Dav3"
+              class="twitter-button bg-gray-800 hover:bg-gray-900 border border-zinc-50 text-white font-bold py-2 px-3 md:px-4 rounded-full mr-2 md:mr-5"
+            >
+              <i class="fab fa-twitter"></i>{" "}
+            </a>
           </div>
-          <ul className="list-disc pl-5 text-sm">
-            <li>
-              Query the{" "}
-              <code className="bg-gray-200 px-2 rounded">getBlockNumber</code>{" "}
-              method using the{" "}
-              <code className="bg-gray-200 px-2 rounded">Web3.js</code> library.
-            </li>
-            <li>Query an Ethereum mainnet node on a free plan.</li>
-            <li>Test performed from a server deployed in New York City.</li>
-            <li>
-              Send 11 requests in a row, remove the first one, and calculate the
-              average of the ten remaining requests.
-            </li>
-            <li>The test runs every 15 minutes.</li>
-            <p className="mx-auto font-bold mt-5 font-lg">
-              NOTE: The first request is eliminated as it is often non-representative.
-            </p>
-            <p className="mx-auto font-bold font-lg">
-              NOTE: The locations displayed are approximations.
-            </p>
-          </ul>
         </div>
       </div>
 
-      <div className="update flex justify-between mt-10">
-        <p className="last-update text-sm font-bold">
-          Last Update: {lastUpdate}
-        </p>
+      <div className="logo relative pt-5 mb-5 md:pt-10 md:mb-10">
+        <h1 className="text-2xl md:text-3xl font-cursive absolute w-full text-center text-yellow-300 text-glow">
+          Explore Ethereum nodes providers
+        </h1>
+      </div>
+      <div className="flex flex-col md:flex-row">
+        <div className="flex items-center w-full md:w-1/2">
+          <div className="p-6 text-stone-400 border-b-8 border-yellow-400 rounded-r-lg font-bold">
+            <div className="text-xl md:text-2xl font-medium mb-2 text-yellow-300">
+              Latency Test Parameters
+            </div>
+            <ul className="list-disc pl-5 text-sm md:text-base">
+              <li>
+                Query the{" "}
+                <code className="bg-gray-200 px-2 rounded">getBlockNumber</code>{" "}
+                method using the{" "}
+                <code className="bg-gray-200 px-2 rounded">Web3.js</code>{" "}
+                library.
+              </li>
+              <li>Query an Ethereum mainnet node on a free plan.</li>
+              <li>Test performed from a server deployed in New York City.</li>
+              <li>
+                Send 11 requests, remove the 1st, average the 10 remaining.
+              </li>
+              <li>The test runs every 15 minutes.</li>
+              <p className="mx-auto font-bold mt-5 font-lg">
+                NOTE: The first request is eliminated as it is often
+                non-representative.
+              </p>
+              <p className="mx-auto font-bold font-lg">
+                NOTE: The locations displayed are approximations.
+              </p>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-gray-800 bg-opacity-50 rounded-lg shadow-lg p-5 sm:p-10 w-full sm:w-1/2 mt-10 sm:mr-5 items-center border-l-4 border-t-4 border-yellow-500">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 h-full">
+            <div class="bg-gray-700 rounded-lg px-4 py-2 flex flex-col justify-center">
+              <p class="text-white font-bold mb-2 sm:mb-5">
+                Providers tracked:
+              </p>
+              <p class="text-yellow-300 text-glow font-bold">
+                {providersList.length}
+              </p>
+            </div>
+            <div class="bg-gray-700 rounded-lg px-4 py-2 flex flex-col justify-center">
+              <p class="text-white font-bold mb-2 sm:mb-5">Locations tested:</p>
+              <p class="text-yellow-300 text-glow font-bold">{"1"}</p>
+            </div>
+            <div class="bg-gray-700 rounded-lg px-4 py-2 flex flex-col justify-center">
+              <p class="text-white font-bold mb-2 sm:mb-5">Last Update:</p>
+              <p class="text-yellow-300 text-glow font-bold text-sm">
+                {lastUpdate}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
   );

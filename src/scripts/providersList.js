@@ -22,7 +22,7 @@ const providersList = [
     image: chainstackBanner.src,
     title: 'Chainstack',
     link: 'https://chainstack.com/',
-    description: 'Ethereum mainnet | Free plan',
+    description: 'Ethereum | Free',
   },
   {
     index: 1,
@@ -30,7 +30,7 @@ const providersList = [
     image: alchemykBanner.src,
     title: 'Alchemy',
     link: 'https://www.alchemy.com/',
-    description: 'Ethereum mainnet | Free plan',
+    description: 'Ethereum | Free',
   },
   {
     index: 2,
@@ -38,7 +38,7 @@ const providersList = [
     image: quicknodeBanner.src,
     title: 'QuickNode',
     link: 'https://www.quicknode.com/',
-    description: 'Ethereum mainnet | Free plan',
+    description: 'Ethereum | Free',
   },
   {
     index: 3,
@@ -46,7 +46,7 @@ const providersList = [
     image: infuraBanner.src,
     title: 'Infura',
     link: 'https://www.infura.io/',
-    description: 'Ethereum mainnet | Free plan',
+    description: 'Ethereum | Free',
   },
   {
     index: 4,
@@ -54,7 +54,7 @@ const providersList = [
     image: ankrBanner.src,
     title: 'Ankr',
     link: 'https://www.ankr.com/',
-    description: 'Ethereum mainnet | Free plan',
+    description: 'Ethereum | Free',
   },
   {
     index: 5,
@@ -62,7 +62,7 @@ const providersList = [
     image: cloudflareBanner.src,
     title: 'Cloudflare',
     link: 'https://www.cloudflare.com/web3/',
-    description: 'Ethereum mainnet | Public',
+    description: 'Ethereum | Public',
   },
   {
     index: 6,
@@ -70,7 +70,7 @@ const providersList = [
     image: flashbotsBanner.src,
     title: 'Flashbots',
     link: 'https://www.flashbots.net/',
-    description: 'Ethereum mainnet | Public',
+    description: 'Ethereum | Public',
   },
   {
     index: 7,
@@ -78,7 +78,7 @@ const providersList = [
     image: llamanodesBanner.src,
     title: 'LlamaNodes',
     link: 'https://llamanodes.com/',
-    description: 'Ethereum mainnet | Public',
+    description: 'Ethereum | Public',
   },
   {
     index: 8,
@@ -86,7 +86,7 @@ const providersList = [
     image: poktBanner.src,
     title: 'Pocket Network',
     link: 'https://www.pokt.network/',
-    description: 'Ethereum mainnet | Free plan',
+    description: 'Ethereum | Free',
   },
   {
     index: 9,
@@ -94,7 +94,7 @@ const providersList = [
     image: blastBanner.src,
     title: 'Blast API',
     link: 'https://blastapi.io/',
-    description: 'Ethereum mainnet | Free plan',
+    description: 'Ethereum | Free',
   },
   {
     index: 10,
@@ -102,7 +102,7 @@ const providersList = [
     image: nodereal.src,
     title: 'NodeReal',
     link: 'https://nodereal.io/',
-    description: 'Ethereum mainnet | Free plan',
+    description: 'Ethereum | Free',
   },
   {
     index: 11,
@@ -110,7 +110,7 @@ const providersList = [
     image: gateway.src,
     title: 'Gateway.fm',
     link: 'https://www.gateway.fm/',
-    description: 'Ethereum mainnet | Public',
+    description: 'Ethereum | Public',
   },
   
 ];

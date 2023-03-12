@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.text-glow {
+  text-shadow: 0 0 5px #ff0, 0 0 10px #ff1;
+}
+
 .tooltip {
   position: relative;
   display: inline-block;
