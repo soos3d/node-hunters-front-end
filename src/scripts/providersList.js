@@ -13,6 +13,7 @@ import poktBanner from '../images/pokt.png'
 import blastBanner from '../images/blast.png'
 import nodereal from '../images/nodereal.png'
 import gateway from '../images/gateway.png'
+import allthatnode from '../images/allthatnode.png'
 
 // List of providers  
 const providersList = [
@@ -111,6 +112,14 @@ const providersList = [
     title: 'Gateway.fm',
     link: 'https://www.gateway.fm/',
     description: 'Ethereum | Public',
+  },
+  {
+    index: 12,
+    name: 'allthatnode',
+    image: allthatnode.src,
+    title: 'All That Node',
+    link: 'https://www.allthatnode.com/',
+    description: 'Ethereum | Free',
   },
   
 ];
