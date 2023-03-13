@@ -14,7 +14,7 @@ const ProviderCard = ({
   return (
     <div
       className={`max-w-sm rounded overflow-hidden shadow-lg border-4 ${
-        status === "connected" ? "border-blue-700" : "border-gray-400"
+        status === "connected" ? "border-l-yellow-400 border-t-yellow-400 border-r-purple-600 border-b-purple-600 border-4" : "border-gray-400"
       } ${status === "connected" ? "bg-white" : "bg-gray-300"}`}
     >
       <a target="_blank" rel="noopener noreferrer" href={link}>
