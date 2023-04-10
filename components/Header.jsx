@@ -9,7 +9,7 @@ import logo from "../src/images/logo.png";
 const Header = ({ lastUpdate }) => {
   return (
     <header className="header text-white">
-      <div class="container mx-auto bg-gray-900 w-full">
+      <div class="bg-gray-900 w-full">
         <div class="navbar flex flex-col items-center md:flex-row justify-between">
           <div class="logo flex items-center">
             <img

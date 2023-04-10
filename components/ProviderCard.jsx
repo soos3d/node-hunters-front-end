@@ -51,7 +51,7 @@ const ProviderCard = ({
             className="tooltip ml-5 mt-1"
             data-tooltip={tooltipText.join("\n")}
           >
-            <i className="fa fa-info-circle"></i>
+            <i className="fa fa-info-circle text-black"></i>
           </span>
         )}
       </div>
