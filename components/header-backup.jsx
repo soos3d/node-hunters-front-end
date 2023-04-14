@@ -23,6 +23,22 @@ const Header = ({ lastUpdate }) => {
               </p>
             </div>
           </div>
+          <div class="sm:px-6 lg:px-8 mb-5 text-center mt-5 md:mt-0">
+            <a
+              target="_blank"
+              href="https://github.com/soos3d/nodes-hunter-server"
+              class="github-button bg-gray-800 hover:bg-gray-900 border border-zinc-50 text-white font-bold py-2 px-3 md:px-4 rounded-full mr-2 md:mr-5"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              target="_blank"
+              href="https://twitter.com/web3Dav3"
+              class="twitter-button bg-gray-800 hover:bg-gray-900 border border-zinc-50 text-white font-bold py-2 px-3 md:px-4 rounded-full mr-2 md:mr-5"
+            >
+              <i class="fab fa-twitter"></i>{" "}
+            </a>
+          </div>
         </div>
       </div>
 
