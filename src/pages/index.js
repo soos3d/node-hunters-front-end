@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { Analytics } from "@vercel/analytics/react";
 // Import components
 import Header from "../../components/Header";
 import ProviderCard from "../../components/ProviderCard";
@@ -111,6 +111,7 @@ const App = () => {
 
   return (
     <div>
+      <Analytics />
       <Header lastUpdate={lastUpdate} className="text-center" />
       <div className="flex flex-col mt-10 justify-center items-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 sm:px-4 md:px-8 lg:px-16 xl:px:64 ml-5 mr-5">
