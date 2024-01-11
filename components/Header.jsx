@@ -2,7 +2,7 @@ import React from "react";
 import "@fortawesome/fontawesome-free/css/all.css";
 import providersList from "../src/scripts/providersList";
 
-import logo from "../src/images/logo.png";
+import logo from "../public/logo_new.png";
 
 // color gradient bg-gradient-to-l from-purple-600 via-purple-700 to-purple-900
 
@@ -16,6 +16,7 @@ const Header = ({ lastUpdate }) => {
               src={logo.src}
               alt="Nodes hunter logo"
               class="ml-2 md:ml-5 h-10 md:h-auto"
+              style={{ width: "100px", height: "100px" }}
             />
             <div class="container">
               <p class="font-cursive text-xl md:text-3xl font-bold uppercase tracking-wider text-yellow-300 text-glow ml-2 md:ml-5">
